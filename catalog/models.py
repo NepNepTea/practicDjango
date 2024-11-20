@@ -78,6 +78,7 @@ class Book(models.Model):
     # ManyToManyField used because genre can contain many books. Books can cover many genres.
     # Genre class has already been defined so we can specify the object above.
     language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
+    cover = models.ImageField(upload_to ='images/', help_text="Select a cover for this book", null=True)
 
     def __str__(self):
         """
